@@ -27,7 +27,7 @@
       },
       {
         "label": "recording-window",
-        "title": "ReFast - 录制回放工具",
+        "title": "ReFast - Recording and Playback Tool",
         "width": 800,
         "height": 600,
         "resizable": true,
@@ -55,7 +55,7 @@
     ],
     "windows": {
       "wix": {
-        "language": "zh-CN"
+        "language": "en-US"
       }
     }
   }
