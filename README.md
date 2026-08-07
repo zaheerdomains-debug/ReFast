@@ -1,193 +1,193 @@
 # ReFast
 
 <div align="center">
-  <h3>基于 Tauri 2 的 Windows 快速启动器</h3>
-  <p>类似 utools，让你快速启动应用、搜索文件、管理备忘录</p>
+  <h3>A Windows quick launcher based on Tauri 2</h3>
+  <p>Similar to utools, it allows you to quickly launch applications, search for files, and manage notes.</p>
   <p>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-    <a href="https://github.com/Xieweikang123/ReFast/releases"><img src="https://img.shields.io/github/v/release/Xieweikang123/ReFast" alt="Release"></a>
-    <a href="https://github.com/Xieweikang123/ReFast"><img src="https://img.shields.io/github/stars/Xieweikang123/ReFast?style=social" alt="Stars"></a>
+    <a href="https://github.com/zaheerdomains-debug/ReFast/releases"><img src="https://img.shields.io/github/v/release/Xieweikang123/ReFast" alt="Release"></a>
+    <a href="https://github.com/zaheerdomains-debug/ReFast"><img src="https://img.shields.io/github/stars/Xieweikang123/ReFast?style=social" alt="Stars"></a>
   </p>
 </div>
 
-## 📑 目录
+## 📑 Table of Contents
 
-- [下载](#下载)
-- [使用文档](#使用文档)
-- [技术栈](#技术栈)
-- [项目结构](#项目结构)
-- [开发](#开发)
-- [功能特性](#功能特性)
-- [联系作者-加入产品交流群](#联系作者)
-- [功能状态](#功能状态)
-- [贡献](#贡献)
-- [许可证](#许可证)
-- [更新历史](#更新历史)
-- [相关链接](#相关链接)
+- Download
+- User Documentation
+- Technology Stack
+- Project Structure
+- Development
+- Features
+- Contact the author - Join the product discussion group
+- Functional status
+- Contribute
+- License
+- Update History
+- Related Links
 
-## 下载
+## Download
 
-从 [Releases](https://github.com/Xieweikang123/ReFast/releases) 页面下载最新版本的安装包。
+Download the latest version of the installation package from the [Releases](https://github.com/zaheerdomains-debug/ReFast/releases)
 
-## 使用文档
+## User Documentation
 
-[📚 使用文档 (Wiki)](https://github.com/Xieweikang123/ReFast/wiki)
+[📚 Documentation (Wiki)](https://github.com/zaheerdomains-debug/ReFast/wiki)
 
 
-## 技术栈
+## Technology Stack
 
-- **框架**: Tauri 2.x (支持跨平台，但当前项目主要适配 Windows)
-- **前端**: React + TypeScript + Tailwind CSS
-- **后端**: Rust
-- **平台**: Windows 10/11
+- **Framework**: Tauri 2.x (cross-platform support, but the current project is primarily optimized for Windows)
+- **Frontend**: React + TypeScript + Tailwind CSS
+- **Backend**: Rust
+- **Platform**: Windows 10/11
 
-> **注意**: 由于作者精力有限，目前主要适配 Windows 平台。虽然 Tauri 框架本身支持 macOS 和 Linux，但项目中的部分功能（如 Everything 搜索、Windows 系统文件夹搜索等）是 Windows 特定的。欢迎社区贡献跨平台实现！
+> **Note**: Due to limited development resources, the project currently focuses primarily on Windows. Although the Tauri framework itself supports macOS and Linux, some features of this project, such as Everything search and Windows system folder search, are Windows-specific. Cross-platform implementations from the community are welcome!
 
-## 项目结构
+## Project Structure
 
 ```
 re-fast/
-├── src/                    # 前端代码
-│   ├── api/               # Tauri API 封装
-│   ├── components/        # React 组件
-│   ├── types/             # TypeScript 类型定义
-│   ├── App.tsx            # 主应用组件
-│   └── main.tsx           # 入口文件
-├── src-tauri/             # Tauri 后端代码
+├── src/                    # Frontend code
+│   ├── api/               # Tauri API wrappers
+│   ├── components/        # React components
+│   ├── types/             # TypeScript type definitions
+│   ├── App.tsx            # Main application component
+│   └── main.tsx           # Entry point
+├── src-tauri/             # Tauri backend code
 │   ├── src/
-│   │   ├── commands.rs    # Tauri 命令定义
-│   │   ├── launcher.rs    # 启动器核心功能
-│   │   ├── hotkey.rs      # 全局快捷键
-│   │   ├── everything_search.rs  # Everything 搜索集成
-│   │   ├── app_search.rs  # 应用搜索
-│   │   ├── memos.rs       # 备忘录功能
-│   │   ├── error.rs       # 错误处理
-│   │   └── main.rs        # 应用入口
-│   └── Cargo.toml         # Rust 依赖配置
-└── package.json           # 前端依赖配置
+│   │   ├── commands.rs    # Tauri command definitions
+│   │   ├── launcher.rs    # Launcher core functionality
+│   │   ├── hotkey.rs      # Global hotkeys
+│   │   ├── everything_search.rs  # Everything search integration
+│   │   ├── app_search.rs  # Application search
+│   │   ├── memos.rs       # Memo functionality
+│   │   ├── error.rs       # Error handling
+│   │   └── main.rs        # Application entry point
+│   └── Cargo.toml         # Rust dependency configuration
+└── package.json           # Frontend dependency configuration
 ```
 
-## 开发
+## Development
 
-### 前置要求
+### Prerequisites
 
 - Node.js (v18+)
-- Rust (最新稳定版)
-- Windows 10/11 开发环境
+- Rust (latest stable version)
+- Windows 10/11 Development Environment
 
-### 安装依赖
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### 开发模式
+### Development Model
 
 ```bash
 npm run dev:tauri
 ```
 
-### 构建
+### Build
 
 ```bash
 npm run build:tauri
 ```
 
-发布到 GitHub Releases 见 [docs/RELEASE.md](docs/RELEASE.md)。
+[docs/RELEASE.md](docs/RELEASE.md) for the GitHub Releases.
 
-## 功能特性
+## Features
 
-### 核心功能
-- 🚀 **快速启动器** - 通过全局快捷键快速呼出，支持应用、文件、备忘录搜索
-- 🔍 **智能搜索** - 集成 Everything 搜索，支持应用搜索、文件历史、系统文件夹搜索，智能排序确保常用结果优先显示；搜索过程中结果稳定前禁止点击，并显示分阶段进度提示
-- 📝 **备忘录中心** - 快速记录和检索备忘信息
-- 🔧 **插件系统** - 支持自定义插件扩展功能
-- ⌨️ **全局快捷键** - 自定义快捷键配置
-- 🎨 **现代化 UI** - 基于 React + Tailwind CSS 的优雅界面
-- ⚡ **性能优秀** - 基于 Rust + Tauri 2，资源占用极低
-- 👆 **智能关闭** - 点击其他窗口时自动关闭搜索框，提供流畅的使用体验
+### Core Functions
+- 🚀 **Quick Launcher** - Quickly accessed via global keyboard shortcuts, supports searching for applications, files, and notes.
+- 🔍 **Smart Search** - Integrates with Everything search, supporting app search, file history search, and system folder search. Intelligent sorting ensures frequently used results are displayed first; clicks are disabled until search results stabilize, and phased progress indicators are displayed.
+- 📝 **Memo Center** - Quickly record and retrieve memos
+- 🔧 **Plug -in System** - Supports custom plug-in extension functionality
+- ⌨️ **Global Shortcut Keys** - Customize Shortcut Key Configuration
+- 🎨 **Modern UI** - Elegant interface based on React + Tailwind CSS
+- ⚡ **Excellent performance** - Based on Rust + Tauri 2, with extremely low resource consumption
+- 👆 **Smart Close** - The search box automatically closes when you click on another window, providing a smooth user experience.
 
-#### 搜索结果交互
+#### Search result interaction
 
-输入关键词搜索时，启动器会等多路结果稳定后再允许点击或按 Enter 启动，避免结果列表「跳动」时误触：
+When entering keywords to search, the launcher waits until results from multiple sources have stabilized before allowing clicking or pressing Enter to launch an item. This prevents accidental activation while the result list is still changing:
 
-- **防抖等待**：输入停止前不发起搜索（短词约 320ms，长词更快）
-- **并行搜索**：应用、文件历史、系统文件夹、Everything 等同时检索
-- **稳定判定**：合并排序完成、Everything 返回、分批渲染结束后，再额外等待约 350ms 静默期
-- **交互限制**：搜索进行中列表半透明、不可点击，Enter 启动同样被禁用
+- **Debouncing wait**：The search is not initiated until the input stops (approximately 320ms for short words, even faster for long words).
+- **Parallel search**：Simultaneously search applications, file history, system folders, Everything, etc.
+- **Stability determination**：After the merge sort is complete, Everything returns, and batch rendering is finished, wait an additional 350ms quiet period.
+- **Interaction restrictions**：The search in progress list is semi-transparent and not clickable; launching the search by pressing Enter is also disabled.
 
-搜索过程中，结果区顶部会显示 **「结果更新中」** 及当前阶段的细节标签，例如：
+During the search process, the top of the results area will display "**Results Updating**" and a detailed label indicating the current stage, for example:
 
-| 标签 | 含义 |
+| Label | Meaning |
 |------|------|
-| `等待输入稳定` | 防抖中，尚未开始搜索 |
-| `应用与文件历史` | 本地应用、文件历史检索中 |
-| `Everything 23/1200 条` | Everything 搜索进度 |
-| `匹配「关键词」` | 合并结果尚未对齐当前输入 |
-| `整理排序` | 多路结果合并排序中 |
-| `列表已显示 150 条` | 大量结果分批加载中 |
-| `即将完成` | 各阶段结束，进入最后静默等待 |
+| `Waiting for stable input` | Image stabilization in progress, search not yet started. |
+| `App and file history` | In local applications and file history search |
+| `Everything 23/1200 items` | Everything Search Progress |
+| `Match "keywords"` | The merge result is not yet aligned with the current input. |
+| `Sort` | Merging and sorting results from multiple paths |
+| `The list currently displays 150 items.` | A large number of results are being loaded in batches. |
+| `Nearly to be completed` | After each stage, we enter the final silent waiting phase. |
 
-无结果时，居中 loading 区域也会显示相同的状态详情。
+If there are no results, the same status details will also be displayed in the centered loading area.
 
-### 内置工具
-- 📄 **JSON 格式化工具** - 格式化、压缩和验证 JSON 数据
-- 📌 **计算稿纸** - 多行记录：像写草稿一样写多行算式，支持精确计算
-- 🌐 **翻译工具** - 支持百度翻译和搜狗翻译，自动读取剪切板内容并翻译，支持多种语言互译
-- 📦 **文件工具箱** - 批量文件查找替换工具，支持正则表达式、文件扩展名过滤、自动备份等功能
-- 🎬 **动作录制与回放** - 录制键盘和鼠标操作，支持不同速度的回放，适合自动化重复操作
-- 🔧 **插件管理界面** - 查看和管理所有可用插件
-- ⚙️ **设置中心** - 应用配置和个性化设置
+### Built-in tools
+- 📄 **JSON Formatter** - Format, compress, and validate JSON data
+- 📌 **Calculation Scratch Paper** - Multi-line Recording: Write multi-line equations like you're writing drafts, supporting precise calculations.
+- 🌐 **Translation Tool** - Supports Baidu Translate and Sogou Translate, automatically reads clipboard content and translates, supports mutual translation between multiple languages.
+- 📦 **File Toolbox** - Batch file find and replace tool, supports regular expressions, file extension filtering, automatic backup and other functions.
+- 🎬 **Action Recording and Playback** - Record keyboard and mouse operations, support playback at different speeds, suitable for automating repetitive tasks.
+- 🔧 **Plugin Management Interface** - View and manage all available plugins
+- ⚙️ **Settings Center** - App Configuration and Personalization Settings
 
-## 联系作者
+## Contact the author
 
 <div align="center">
 
-**🎉 欢迎加入 ReFast 产品交流群！**
+**🎉 Welcome to join the ReFast product discussion group!**
 
-扫描下方二维码添加作者微信，一起交流使用体验、反馈问题、提出建议！
+Scan the QR code below to add the author on WeChat, and let's exchange user experiences, provide feedback, and offer suggestions!！
 
 
 ![作者微信二维码](https://github.com/user-attachments/assets/3071dd2f-1425-489e-b351-98c3bb34689e)
 
-**期待你的加入！** 🚀
+**We look forward to having you join us!** 🚀
 
 </div>
 
-## 功能状态
+## Functional status
 
-### 已完成
-- ✅ 快速启动器核心功能
-- ✅ 应用搜索和启动
-- ✅ Everything 搜索集成
-- ✅ 文件历史记录
-- ✅ 备忘录功能
-- ✅ 全局快捷键支持
-- ✅ 插件系统框架
-- ✅ JSON 格式化工具
-- ✅ 计算稿纸插件（支持精确计算，使用 mathjs）
-- ✅ 翻译工具（支持百度翻译、搜狗翻译，自动读取剪切板）
-- ✅ 文件工具箱（批量查找替换，支持正则表达式和备份）
-- ✅ 动作录制与回放功能
-- ✅ 现代化 UI 界面
-- ✅ 失去焦点时自动关闭搜索框
-- ✅ 搜索结果稳定后才可点击，搜索中显示分阶段进度提示
+### Completed
+- ✅ Quick Launcher Core Functions
+- ✅ App search and launch
+- ✅ Everything Search Integration
+- ✅ File History
+- ✅ Memo feature
+- ✅ Global keyboard shortcuts supported
+- ✅ Plugin System Framework
+- ✅ JSON formatter
+- ✅ Calculation sheet plugin (supports precise calculations, uses mathjs)
+- ✅ Translation tool (supports Baidu Translate and Sogou Translate, automatically reads clipboard)
+- ✅ File Toolbox (Batch find and replace, supports regular expressions and backup)
+- ✅ Action recording and playback function
+- ✅ Modern UI
+- ✅ Automatically close the search box when it loses focus.
+- ✅ Click only after the search results have stabilized; the search process will display phased progress indicators.
 
-### 计划中
-- ⏳ 更多内置插件
-- ⏳ 主题自定义
-- ⏳ 搜索历史优化
-- ⏳ 更多文件类型支持
+### In the plan
+- ⏳ More built-in plugins
+- ⏳ Theme Customization
+- ⏳ Search history optimization
+- ⏳ More file types supported
 
-## 贡献
+## contribute
 
-欢迎提交 Issue 和 Pull Request！
+We welcome you to submit Issue and Pull Requests!
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 更新历史
+## Update History
 
 ### 近期更新
 
@@ -256,114 +256,114 @@ npm run build:tauri
   - 优化按钮样式和布局，改善可访问性
 
 ### v1.0.26
-- 🔄 **版本管理与自动更新**
-  - 新增版本管理脚本系统，支持版本号同步和测试版本设置
-  - 新增自动检查更新功能，支持每 24 小时自动检查（可在设置中关闭）
-  - 启动后延迟 5 秒检查更新，避免影响启动速度
-  - 在"关于"页面支持手动检查更新
-- ⚡ **性能优化**
-  - 应用版本号缓存机制，避免重复获取，提升事件上报性能
-  - LauncherWindow 使用 useCallback 优化，减少不必要的重渲染
-  - 实现应用列表静默预加载，提升启动速度
-  - 优化应用搜索执行流程和数据库访问
-  - 增强 Everything 搜索缓存机制
-- 🔍 **搜索功能增强**
-  - 添加详细的调试日志（性能日志、搜索流程日志）
-  - 优化应用搜索和排序逻辑，改进结果总数处理和显示
-  - 增强应用和文件历史搜索功能
-  - 增强 Everything 搜索功能和系统文件夹搜索功能
-- 🧹 **代码重构与清理**
-  - 移除 SystemFolderItem 相关引用和功能
-  - 移除所有 agent 日志代码，保留必要的调试日志（通过配置控制）
-- 🔧 **功能改进**
-  - 重构 reveal_in_folder 命令，改进文件路径处理逻辑
-  - 支持回收站文件的特殊处理
-  - 优化 Windows 资源管理器的打开逻辑
-  - 重构热键更新处理逻辑，增强搜索失败时的日志记录
+- 🔄 **Version Management and Automatic Updates**
+  - A new version management script system has been added, supporting version number synchronization and test version settings.
+A new automatic update check feature has been added, supporting automatic checks every 24 hours (this can be turned off in settings).
+After startup, a 5-second delay is set to check for updates to avoid impacting startup speed.
+The "About" page supports manually checking for updates.
+- ⚡ **Performance Optimization**
+  - The application uses a version number caching mechanism to avoid duplicate retrieval and improve event reporting performance.
+LauncherWindow is optimized using useCallback to reduce unnecessary re-rendering.
+Implement silent preloading of the application list to improve startup speed.
+Optimize application search execution process and database access
+Enhance Everything search caching mechanism
+- 🔍 **Enhanced search function**
+  - Add detailed debug logs (performance logs, search process logs).
+Optimize application search and sorting logic, and improve the handling and display of total results.
+Enhanced application and file history search functionality
+Enhance the search functionality of Everything and system folders.
+- 🧹 **Code refactoring and cleanup**
+  - Remove SystemFolderItem related references and functions
+Remove all agent logging code, but retain necessary debug logs (controlled via configuration).
+- 🔧 **Feature improvements**
+  - The `reveal_in_folder` command has been refactored, and the file path handling logic has been improved.
+Supports special handling of files in the recycle bin.
+Optimize the opening logic of Windows Explorer
+Refactor the hotkey update handling logic and enhance logging when a search fails.
 
 ### v1.0.21
-- 🔍 **Everything 搜索功能重大升级**
-  - 实现搜索会话管理与分页系统，支持大规模结果集的高效加载（每页 500 条）
-  - 新增搜索取消功能，可中断长时间运行的搜索任务
-  - 优化会话参数管理，避免重复创建会话，提升搜索性能
-  - 实现批量结果处理机制，大幅提升大数据量场景下的响应速度
-  - 添加批次事件监听，实时显示搜索加载进度
-  - 优化内存使用，支持最多缓存 8 页数据（LRU 策略）
-- 🎨 **自定义过滤器系统**
-  - 支持自定义文件类型过滤器，使用 SQLite 持久化存储
-  - 支持 Everything 语法自动检测，识别高级搜索语法
-  - 新增文件夹名称匹配偏好设置
-  - 支持最大结果数配置（默认 5000，最大 200 万）
-  - 优化排序选项，支持按大小、类型、名称排序
-- 🚀 **启动器窗口优化**
-  - 新增应用启动火箭动画效果，提升视觉反馈
-  - 重构搜索取消逻辑，提升响应速度和稳定性
-  - 添加窗口隐藏能力配置，优化窗口管理
-- 🔧 **用户体验改进**
-  - 添加滚动到顶部功能，快速返回结果列表
-  - 优化错误处理和提示信息
-  - 移除冗余搜索效果，简化搜索流程
-  - 重构插件过滤逻辑，优化插件中心交互
+- 🔍 **Major upgrade to the Everything search function**
+  - Implement a search session management and pagination system that supports efficient loading of large result sets (500 results per page).
+  - A new search cancellation feature has been added, which can interrupt long-running search tasks.
+  - Optimize session parameter management to avoid duplicate session creation and improve search performance.
+  - Implementing a batch result processing mechanism significantly improves response speed in scenarios with large amounts of data.
+  - Add batch event listeners to display search loading progress in real time.
+  - Optimizes memory usage, supporting caching up to 8 pages of data (LRU strategy).
+- 🎨 **Custom Filter System**
+  - Supports custom file type filters and uses SQLite persistent storage.
+  - Supports automatic syntax detection for Everything, recognizing advanced search syntax.
+  - Added folder name matching preference settings
+  - Supports configuration of the maximum number of results (default 5000, maximum 2 million).
+  - Optimized sorting options, supporting sorting by size, type, and name.
+- 🚀 **Launcher window optimization**
+  - Added a rocket launch animation effect to enhance visual feedback.
+  - Refactor the search cancellation logic to improve response speed and stability.
+  - Added window hiding capability configuration and optimized window management.
+- 🔧 **User experience improvements**
+  - Add a scroll-to-top feature for quick access to the results list.
+  - Optimize error handling and message prompts.
+  - Remove redundant search effects and simplify the search process.
+  - Refactor the plugin filtering logic and optimize the plugin center interaction.
 
 ### v1.0.19
-- 🌐 新增翻译工具：支持百度翻译和搜狗翻译，自动读取剪切板内容并翻译
-- 🔄 翻译工具支持多种语言互译（中文、英语、日语、韩语、法语、德语等 14 种语言）
-- 📦 新增文件工具箱：批量文件查找替换工具
-- 🔍 文件工具箱支持正则表达式匹配、文件扩展名过滤、大小写敏感等高级选项
-- 💾 文件工具箱支持自动备份功能，替换前自动备份文件夹，确保数据安全
-- 📝 文件工具箱支持替换文件名中的内容
+- 🌐 New translation tool: Supports Baidu Translate and Sogou Translate, automatically reads clipboard content and translates.
+- 🔄 The translation tool supports translation between multiple languages ​​(Chinese, English, Japanese, Korean, French, German, and 14 other languages).
+- 📦 New File Toolbox: Batch File Find and Replace Tool
+- 🔍 The File Toolbox supports advanced options such as regular expression matching, file extension filtering, and case sensitivity.
+- 💾 The File Toolbox supports automatic backup, automatically backing up folders before replacement to ensure data security.
+- 📝 The File Toolbox supports replacing content in filenames.
 
 ### v1.0.18
-- 🎯 优化插件系统，提升插件加载和执行性能
-- 🔧 改进设置界面，优化用户体验
+- 🎯 Optimized the plugin system to improve plugin loading and execution performance.
+- 🔧 Improved settings interface and optimized user experience
 
 ### v1.0.17
-- 📊 新增“统计”页：查看用户总数、插件使用次数排行，后续会扩展活跃趋势和功能热度
-- 🔄 插件使用统计：执行插件时自动记录启动次数与最近使用时间，支持本地排行榜展示
-- 📈 事件追踪：应用启动、应用启动器打开应用等关键操作会上报事件（支持可配置的事件服务端）
-- 💾 新增数据库备份：一键备份当前数据，便于迁移或回滚
+- 📊 Added a "Statistics" page: View the total number of users and plugin usage rankings. Activity trends and feature popularity will be added later.
+- 🔄 Plugin Usage Statistics: Automatically records the number of times a plugin is launched and its most recent usage time when the plugin is executed, and supports local leaderboard display.
+- 📈 Event Tracking: Critical operations such as application startup and application launcher opening the application will report events (configurable event server supported).
+- 💾 Added database backup: One-click backup of current data for easy migration or rollback.
 
 ### v1.0.16
-- 👆 新增失去焦点时自动关闭搜索框功能，点击其他窗口时搜索框会自动关闭
-- 🎯 优化用户体验，使搜索框行为更符合启动器应用的常见交互模式
+- 👆 Added the feature to automatically close the search box when it loses focus; the search box will automatically close when you click on another window.
+- 🎯 Optimized user experience, making the search box behavior more consistent with common interaction patterns of launcher applications.
 
 ### v1.0.15
-- 📌 新增计算稿纸插件，支持多行算式记录和精确计算
-- 🎨 计算稿纸采用草稿纸风格的淡黄色主题
-- 🔢 使用 mathjs 库处理浮点数精度问题，避免计算误差
-- 📋 支持单行结果复制和全部结果复制
-- ⌨️ 支持键盘快捷键：Enter 添加新行、Backspace 删除行、↑/↓ 导航
-- 🔍 优化搜索结果排序算法，历史文件结果优先于 Everything 结果
-- 📊 历史文件结果获得额外加分（基础加分 300 分 + 文件名匹配加权 30%）
-- 📈 使用次数越多的历史文件，排序越靠前（使用次数加分最多 200 分）
-- ⚡ 评分差距在 200 分以内时，历史文件优先于 Everything 结果显示
+- 📌 Added a calculation paper plugin, supporting multi-line formula recording and precise calculations.
+- 🎨 The calculation paper features a light yellow theme reminiscent of scratch paper.
+- 🔢 Use the mathjs library to handle floating-point precision issues and avoid calculation errors.
+- 📋 Supports copying single rows of results and copying all results.
+- ⌨️ Supports keyboard shortcuts: Enter to add a new line, Backspace to delete a line, and ↑/↓ for navigation.
+- 🔍 Optimized search result ranking algorithm; historical file results take precedence over Everything results.
+- 📊 Bonus points for historical file results (base score 300 points + 30% weighting for filename matching)
+- 📈 Historical files that have been used more often will appear higher in the sorting (maximum score of 200 points for usage frequency).
+- ⚡ When the rating difference is within 200 points, historical files take precedence over Everything results.
 
 ### v1.0.14
-- 🔍 优化应用搜索排序算法，应用优先显示
-- 🎯 支持拼音搜索，拼音匹配时应用优先显示（如搜索 "weixin" 时微信应用排在前面）
-- ⚡ 短查询（2-4字符）完全匹配给予更高权重
-- 📱 应用类型结果额外加分，确保常用应用优先显示
+- 🔍 Optimized app search ranking algorithm, apps are displayed first.
+- 🎯 Supports Pinyin search; when Pinyin matches, the app is displayed first (e.g., when searching for "weixin", the WeChat app appears first).
+- ⚡ Short queries (2-4 characters) that are exact matches are given higher weight.
+- 📱 Application type results receive extra points, ensuring frequently used applications are displayed first.
 
 ### v1.0.13
-- 🔧 优化快捷键录制功能，支持重复修饰键检测（如 Ctrl+Ctrl）
-- 🐛 修复快捷键录制时的重复事件处理问题
-- ⚡ 改进快捷键录制的响应速度和稳定性
+- 🔧 Optimized shortcut recording function, supporting repeated modifier key detection (such as Ctrl+Ctrl).
+- 🐛 Fixed the issue of duplicate event handling during shortcut recording.
+- ⚡ Improved the response speed and stability of shortcut recording
 
 ### v1.0.0+
-- ✅ 快速启动器核心功能
-- ✅ 应用搜索和启动
-- ✅ Everything 搜索集成
-- ✅ 文件历史记录
-- ✅ 备忘录功能
-- ✅ 全局快捷键支持
-- ✅ 插件系统框架
-- ✅ JSON 格式化工具
-- ✅ 现代化 UI 界面
+- ✅ Quick Launcher Core Functions
+- ✅ App search and launch
+- ✅ Everything Search Integration
+- ✅ File History
+- ✅ Memo feature
+- ✅ Global keyboard shortcuts supported
+- ✅ Plugin System Framework
+- ✅ JSON formatter
+- ✅ Modern UI
 
 ## 相关链接
 
-- [GitHub 仓库](https://github.com/Xieweikang123/ReFast)
-- [问题反馈](https://github.com/Xieweikang123/ReFast/issues)
+- [GitHub 仓库](https://github.com/zaheerdomains-debug/ReFast)
+- [问题反馈](https://github.com/zaheerdomains-debug/ReFast/issues)
 - [Tauri 官网](https://tauri.app/)
 
 
