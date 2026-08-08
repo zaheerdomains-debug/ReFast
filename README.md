@@ -189,97 +189,97 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Update History
 
-### 近期更新
+### Recent Updates
 
-*2026 年 7 月 9 日*
+*July 9, 2026*
 
-- **搜索交互优化**：结果列表在搜索未稳定前禁止点击和 Enter 启动，避免结果跳动时误触；稳定后恢复正常交互。
-- **搜索进度提示**：结果区显示「结果更新中」及分阶段标签（等待输入稳定、应用与文件历史、Everything 进度、整理排序、列表加载、即将完成等）。
-- **`.lnk` 快捷方式**：悬停显示解析后的真实目标路径（与 `.exe` 一致的原生 tooltip）；右键「打开所在文件夹」会定位到目标文件所在目录，而不是 `Recent` 里的 `.lnk` 文件。
+- **Search interaction optimization** : Clicking and Enter to activate the results list will be disabled before the search results stabilize to avoid accidental touches when the results change; normal interaction will be restored after the search stabilizes.
+- **Search progress indicators** : The results area displays "Results updating" and stage labels (waiting for input to stabilize, application and file history, Everything progress, sorting, list loading, almost complete, etc.).
+- **`.lnk`Shortcut** : Hover over to display the parsed actual target path ( `.exe` consistent with the native tooltip); right-click and select "Open Folder" to locate the directory where the target file is located, instead of the file `Recent` in the folder `.lnk`.
 
 ### v1.0.68
 
-*2026 年 1 月 7 日*
+*January 7, 2026*
 
-- **搜索列表更聪明**：结果里若出现你**最近打开过**的应用或文件，会**自动选中**最近用过的那一项，少按几次方向键。
-- **选中更清晰**：当前高亮项的对比略加强，一眼能看出选的是哪一条。
-- **启动方式更顺手（Windows）**：批处理、程序、快捷方式的打开方式调整，工作目录和环境变量行为更接近从资源管理器或开始菜单打开。
-- **常用系统入口**：在启动器里能搜到环境变量、设备管理器、服务、网络连接等系统项（支持中文、拼音、英文名等）。
-- 新增 **Markdown 查看**相关能力。
-- 修复搜索框在 **JSON 内容过长**时可能报错的问题。
+- **The search list is smarter** : if the results show an application or file you **recently opened , it will automatically select** the most recently used item, reducing the number of times you need to press the arrow keys.
+- **Clearer Selection** : The contrast of the currently highlighted item is slightly enhanced, making it easy to see which one is selected at a glance.
+- **More convenient startup methods (Windows)** : The way batch files, programs, and shortcuts are opened has been adjusted, and the behavior of working directories and environment variables is closer to opening from Windows Explorer or the Start Menu.
+- **Common system entry points** : You can find system items such as environment variables, device manager, services, and network connections in the launcher (supports Chinese, Pinyin, English names, etc.).
+- Added **Markdown viewing** capabilities.
+- Fixed an issue where the search box might throw an error when the **JSON content was too long**.
 
 
 ### v1.0.56
-- 🎨 **动画效果优化**
-  - 优化 fadeInUp 动画，调整时长为 0.35s，使用 cubic-bezier 缓动函数，提升视觉流畅度
-- ⚡ **性能优化**
-  - 重构 LauncherWindow 输入处理逻辑，简化状态更新流程
-  - 使用 useMemo 对输入框样式进行记忆化，减少不必要的重渲染
-- 🖼️ **图标功能增强**
-  - 新增可执行文件（.exe 和 .lnk）图标提取和缓存功能
-  - 优化搜索结果中的图标显示体验
-- 🔧 **代码优化**
-  - 优化 app_search.rs，减少约 120 行代码，提升代码质量
+- 🎨 **Animation effects optimized**
+  - The fadeInUp animation has been optimized, with its duration adjusted to 0.35 seconds and the cubic-bezier easing function used to improve visual smoothness.
+- ⚡ **Performance Optimization**
+  - Refactor the LauncherWindow input handling logic to simplify the state update process.
+  - Use useMemo to memorize the style of the input field, reducing unnecessary re-rendering.
+- 🖼️ **Icon functionality enhanced**
+  - Added icon extraction and caching functionality for executable files (.exe and .lnk).
+  - Optimize the icon display experience in search results
+- 🔧 **Code optimization**
+  - Optimize app_search.rs, reducing approximately 120 lines of code and improving code quality.
 
 ### v1.0.34
-- 🔧 **插件快捷键优化**
-  - 修复插件快捷键重复触发问题，确保按快捷键时只打开一个插件窗口
-  - 优化插件执行锁机制，支持不同插件之间的快速切换
-  - 修复插件窗口置前问题，按快捷键时窗口会自动置前并获取焦点
-  - 改进窗口显示逻辑，新创建的窗口和已存在的窗口都会正确置前
+- 🔧 **Plugin shortcut key optimization**
+  - Fixed the issue of plugin shortcuts triggering repeatedly, ensuring that only one plugin window opens when a shortcut is pressed.
+  - Optimize the plugin execution lock mechanism to support fast switching between different plugins.
+  - Fixed the issue of bringing the plugin window to the foreground; pressing the shortcut key will now automatically bring the window to the foreground and give it focus.
+  - Improved window display logic; newly created windows and existing windows will now be correctly brought to the front.
 
 ### v1.0.33
-- 📁 **文件历史功能增强**
-  - 新增文件历史搜索功能，支持按文件名/路径搜索
-  - 新增日期范围过滤，支持快速选择时间段（如 5-10 天）
-  - 优化使用次数统计和调试日志
-  - 使用 `requestIdleCallback` 优化大数据量排序，避免阻塞 UI
-  - 添加 15 秒超时保护机制
-- 🎨 **图标提取功能**
-  - 支持 Native API 和 PowerShell 两种图标提取方式
-  - 新增图标验证与统计功能
-  - 统一图标提取失败标记，避免重复尝试
-  - 支持批量提取应用图标
-- ⚡ **LauncherWindow 优化**
-  - 重构 `handleLaunch` 函数，优化文件历史更新逻辑
-  - 统一提前处理 URL（http/https），避免走文件启动流程
-  - 改进路径规范化匹配算法，提高匹配准确性
-  - 优化最近使用时间处理，支持秒级和毫秒级时间戳
-- 🔍 **应用去重逻辑增强**
-  - 统一处理路径大小写和路径分隔符
-  - 优化去重优先级（.exe > .lnk > UWP）
-  - 改进历史文件与 Everything 搜索结果的去重逻辑
-- 🎯 **UI 组件改进**
-  - 新增 `FileHistoryPanel` 独立文件历史管理面板
-  - 新增 `AppIndexList` 应用索引列表管理组件
-  - 新增 `ConfirmDialog` 确认对话框组件
-  - 优化按钮样式和布局，改善可访问性
+- 📁 **Enhanced file history functionality**
+  - Added file history search function, supporting searching by filename/path
+  - A new date range filter has been added, supporting quick selection of time periods (such as 5-10 days).
+  - Optimize usage statistics and debug logs
+  - Use `requestIdleCallback` optimized sorting for large datasets to avoid blocking the UI.
+  - Add a 15-second timeout protection mechanism
+- 🎨 **Icon Extraction Function**
+  - Supports both Native API and PowerShell icon extraction methods.
+  - Added icon verification and statistics functions
+  - A unified icon for failing to extract icons helps avoid repeated attempts.
+  - Supports batch extraction of application icons
+- ⚡ **LauncherWindow Optimization**
+  - Refactor `handleLaunch` the function and optimize the file history update logic.
+  - To avoid the need for file-based startup, URLs (http/https) are preprocessed.
+  - Improve the path normalization matching algorithm to increase matching accuracy.
+  - Optimized recent usage time processing, supporting second-level and millisecond-level timestamps.
+- 🔍 **Enhance the application's deduplication logic**
+  - Unified handling of path case and path separators
+  - Optimize deduplication priority (.exe > .lnk > UWP)
+  - Improved deduplication logic for historical files and Everything search results
+- 🎯 **UI component improvements**
+  - Added `FileHistory` Panela separate document history management panel
+  - Added `AppIndexList` application index list management component
+  - Added `ConfirmDialog` confirmation dialog component
+  - Optimize button styles and layout to improve accessibility.
 
 ### v1.0.26
 - 🔄 **Version Management and Automatic Updates**
   - A new version management script system has been added, supporting version number synchronization and test version settings.
-A new automatic update check feature has been added, supporting automatic checks every 24 hours (this can be turned off in settings).
-After startup, a 5-second delay is set to check for updates to avoid impacting startup speed.
-The "About" page supports manually checking for updates.
+  - A new automatic update check feature has been added, supporting automatic checks every 24 hours (this can be turned off in settings).
+  - After startup, a 5-second delay is set to check for updates to avoid impacting startup speed.
+  - The "About" page supports manually checking for updates.
 - ⚡ **Performance Optimization**
   - The application uses a version number caching mechanism to avoid duplicate retrieval and improve event reporting performance.
-LauncherWindow is optimized using useCallback to reduce unnecessary re-rendering.
-Implement silent preloading of the application list to improve startup speed.
-Optimize application search execution process and database access
-Enhance Everything search caching mechanism
+  - LauncherWindow is optimized using useCallback to reduce unnecessary re-rendering.
+  - Implement silent preloading of the application list to improve startup speed.
+  - Optimize application search execution process and database access
+  - Enhance Everything search caching mechanism
 - 🔍 **Enhanced search function**
   - Add detailed debug logs (performance logs, search process logs).
-Optimize application search and sorting logic, and improve the handling and display of total results.
-Enhanced application and file history search functionality
-Enhance the search functionality of Everything and system folders.
+  - Optimize application search and sorting logic, and improve the handling and display of total results.
+  - Enhanced application and file history search functionality
+  - Enhance the search functionality of Everything and system folders.
 - 🧹 **Code refactoring and cleanup**
   - Remove SystemFolderItem related references and functions
-Remove all agent logging code, but retain necessary debug logs (controlled via configuration).
+  - Remove all agent logging code, but retain necessary debug logs (controlled via configuration).
 - 🔧 **Feature improvements**
   - The `reveal_in_folder` command has been refactored, and the file path handling logic has been improved.
-Supports special handling of files in the recycle bin.
-Optimize the opening logic of Windows Explorer
-Refactor the hotkey update handling logic and enhance logging when a search fails.
+  - Supports special handling of files in the recycle bin.
+  - Optimize the opening logic of Windows Explorer
+  - Refactor the hotkey update handling logic and enhance logging when a search fails.
 
 ### v1.0.21
 - 🔍 **Major upgrade to the Everything search function**
@@ -360,11 +360,11 @@ Refactor the hotkey update handling logic and enhance logging when a search fail
 - ✅ JSON formatter
 - ✅ Modern UI
 
-## 相关链接
+## Related Links
 
-- [GitHub 仓库](https://github.com/zaheerdomains-debug/ReFast)
-- [问题反馈](https://github.com/zaheerdomains-debug/ReFast/issues)
-- [Tauri 官网](https://tauri.app/)
+- [GitHub repository](https://github.com/zaheerdomains-debug/ReFast)
+- [Problem Feedback](https://github.com/zaheerdomains-debug/ReFast/issues)
+- [Tauri Official Website](https://tauri.app/)
 
 
 
