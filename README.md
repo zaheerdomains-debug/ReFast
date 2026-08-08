@@ -147,8 +147,7 @@ If there are no results, the same status details will also be displayed in the c
 
 Scan the QR code below to add the author on WeChat, and let's exchange user experiences, provide feedback, and offer suggestions!！
 
-
-![作者微信二维码](https://github.com/user-attachments/assets/3071dd2f-1425-489e-b351-98c3bb34689e)
+![Author's WeChat QR code](https://github.com/user-attachments/assets/3071dd2f-1425-489e-b351-98c3bb34689e)
 
 **We look forward to having you join us!** 🚀
 
